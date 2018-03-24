@@ -112,12 +112,8 @@ void setClockPulse() {
     clockPulseActive = true;
     Timer1.attachInterrupt(sendClockPulse, clockPeriod);
     // syncing the onset of the arpeggiator with the actual time of the tap (rather
-    // than just the tempo of the tapping) would be nice, but a midi start alone
-    // sadly doesn't do the trick
-    // TODO: try out the Song Position Pointer message to reset arpeggiator:
-    //Midi.write(0xF2);
-    //Midi.write(0x00);
-    //Midi.write(0x00);
+    // than just the *tempo* of the tapping) would be nice, but neither a MIDI start
+    // nor a Song Position Pointer message appear to reset the arpeggiator on my Korg
   }
 }
 
